@@ -15,37 +15,37 @@
 declare(strict_types=1);
 
 /**
- * PocketMine-MP is the Minecraft: PE multiplayer server software
- * Homepage: http://www.pocketmine.net/
+ * TerraZ is the Terraria multiplayer server software
+ * Homepage: http://TerraZ.github.io
  */
-namespace pocketmine;
+namespace TerraZ;
 
-use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
-use pocketmine\command\SimpleCommandMap;
-use pocketmine\console\ConsoleCommandSender;
-use pocketmine\console\ConsoleReaderChildProcessDaemon;
-use pocketmine\crafting\CraftingManager;
-use pocketmine\crafting\CraftingManagerFromDataHelper;
-use pocketmine\crash\CrashDump;
-use pocketmine\crash\CrashDumpRenderer;
-use pocketmine\entity\EntityDataHelper;
-use pocketmine\entity\Location;
-use pocketmine\event\HandlerListManager;
-use pocketmine\event\player\PlayerCreationEvent;
-use pocketmine\event\player\PlayerDataSaveEvent;
-use pocketmine\event\player\PlayerLoginEvent;
-use pocketmine\event\server\CommandEvent;
-use pocketmine\event\server\QueryRegenerateEvent;
-use pocketmine\lang\KnownTranslationFactory;
-use pocketmine\lang\Language;
-use pocketmine\lang\LanguageNotFoundException;
-use pocketmine\lang\Translatable;
-use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\network\mcpe\compression\CompressBatchPromise;
-use pocketmine\network\mcpe\compression\CompressBatchTask;
-use pocketmine\network\mcpe\compression\Compressor;
-use pocketmine\network\mcpe\compression\ZlibCompressor;
+use TerraZ\command\Command;
+use TerraZ\command\CommandSender;
+use TerraZ\command\SimpleCommandMap;
+use TerraZ\console\ConsoleCommandSender;
+use TerraZ\console\ConsoleReaderChildProcessDaemon;
+use TerraZ\crafting\CraftingManager;
+use TerraZ\crafting\CraftingManagerFromDataHelper;
+use TerraZ\crash\CrashDump;
+use TerraZ\crash\CrashDumpRenderer;
+use TerraZ\entity\EntityDataHelper;
+use TerraZ\entity\Location;
+use TerraZ\event\HandlerListManager;
+use TerraZ\event\player\PlayerCreationEvent;
+use TerraZ\event\player\PlayerDataSaveEvent;
+use TerraZ\event\player\PlayerLoginEvent;
+use TerraZ\event\server\CommandEvent;
+use TerraZ\event\server\QueryRegenerateEvent;
+use TerraZ\lang\KnownTranslationFactory;
+use TerraZ\lang\Language;
+use TerraZ\lang\LanguageNotFoundException;
+use TerraZ\lang\Translatable;
+use TerraZ\nbt\tag\CompoundTag;
+use TerraZ\network\mcpe\compression\CompressBatchPromise;
+use TerraZ\network\mcpe\compression\CompressBatchTask;
+use TerraZ\network\mcpe\compression\Compressor;
+use TerraZ\network\mcpe\compression\ZlibCompressor;
 use pocketmine\network\mcpe\convert\TypeConverter;
 use pocketmine\network\mcpe\encryption\EncryptionContext;
 use pocketmine\network\mcpe\EntityEventBroadcaster;
@@ -172,14 +172,14 @@ class Server{
 	use NotCloneable;
 	use NotSerializable;
 
-	public const BROADCAST_CHANNEL_ADMINISTRATIVE = "pocketmine.broadcast.admin";
-	public const BROADCAST_CHANNEL_USERS = "pocketmine.broadcast.user";
+	public const BROADCAST_CHANNEL_ADMINISTRATIVE = "TerraZ.broadcast.admin";
+	public const BROADCAST_CHANNEL_USERS = "TerraZ.broadcast.user";
 
 	public const DEFAULT_SERVER_NAME = VersionInfo::NAME . " Server";
 	public const DEFAULT_MAX_PLAYERS = 20;
-	public const DEFAULT_PORT_IPV4 = 19132;
-	public const DEFAULT_PORT_IPV6 = 19133;
-	public const DEFAULT_MAX_VIEW_DISTANCE = 16;
+	public const DEFAULT_PORT_IPV4 = 7777;
+	public const DEFAULT_PORT_IPV6 = 1111;
+	
 
 	/**
 	 * Worlds, network, commands and most other things are polled this many times per second on average.
